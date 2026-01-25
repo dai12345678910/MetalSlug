@@ -2,8 +2,14 @@
 
 
 #include "MetalSlug01GameModeBase.h"
+
+
+
+#include "ClassIconFinder.h"
 #include "UI/MyGameHUD.h"  // 引入我们之前写的 HUD 头文件
 #include "UObject/ConstructorHelpers.h"
+
+class ASuperMarioPaperCharacter;
 
 AMyBaseGameMode::AMyBaseGameMode()
 {
@@ -13,12 +19,12 @@ AMyBaseGameMode::AMyBaseGameMode()
 
 	// 2. 如果你的 HUD 是蓝图实现的（例如 WBP_MyHUD），则需要路径搜索：
 
-	static ConstructorHelpers::FClassFinder<AHUD> HUDBlueprintClass(TEXT("/Script/Engine.Blueprint'/Game/UI/WBP_MyGameHUD.WBP_MyGameHUD_C'"));
-	if (HUDBlueprintClass.Class != nullptr)
 	{
-		HUDClass = HUDBlueprintClass.Class;
-	}
+		//DefaultPawnClass=ASuperMarioPaperCharacter::StaticClass();
+	
 
+
+	}
 
 	// 3. 指定默认的 PlayerController（负责处理输入切换逻辑）
 	// PlayerControllerClass = AMyPlayerController::StaticClass();
